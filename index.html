@@ -80,7 +80,7 @@
     var numberDisplay = document.getElementById("number-display");
     var historyList = document.getElementById("history-list");
     
-    var stopTimes = [{hour: 10, minute: 32}, {hour: 10, minute: 33}];
+    var stopTimes = [{hour: 11, minute: 8}, {hour: 11, minute: 10}];
     var history = JSON.parse(localStorage.getItem("history")) || [];
   
     // Function to update the displayed number every 6 seconds
@@ -137,7 +137,7 @@
   });
 
 
-    let balance = parseInt(localStorage.getItem('balance')) || 1000;
+    let balance = parseInt(localStorage.getItem('balance')) || 0;
     let transactionHistory = JSON.parse(localStorage.getItem('transactionHistory')) || [];
 
     function updateBalance() {
