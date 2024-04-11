@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +32,6 @@
         margin-bottom: 20px;
     }
     #history1 {
-        
         margin-top: 20px;
         text-align: left;
     }
@@ -54,7 +54,7 @@
 
 #history-list {
   font-size: 18px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 </style>
 </head>
@@ -80,7 +80,7 @@
     var numberDisplay = document.getElementById("number-display");
     var historyList = document.getElementById("history-list");
     
-    var stopTimes = [{hour: 11, minute: 8}, {hour: 11, minute: 10}];
+    var stopTimes = [{hour: 11, minute: 14}, {hour: 11, minute: 16}];
     var history = JSON.parse(localStorage.getItem("history")) || [];
   
     // Function to update the displayed number every 6 seconds
@@ -137,7 +137,7 @@
   });
 
 
-    let balance = parseInt(localStorage.getItem('balance')) || 0;
+    let balance = parseInt(localStorage.getItem('balance')) || 1000;
     let transactionHistory = JSON.parse(localStorage.getItem('transactionHistory')) || [];
 
     function updateBalance() {
@@ -198,16 +198,9 @@
 
     // Display initial balance and transaction history
     updateBalance();
-    
     updateTransactionHistory();
     
-   // Initial update
-    updateNumber();
-    updateHistoryList();
-    startInterval(); // Start the interval for updating the number
-
-    // Schedule automatic deletion of transaction history after 1 hour
-    setTimeout(clearHistory, 100000); // 1 hour in milliseconds (3600000)
+    setTimeout(clearHistory, 1000); // 1 hour in milliseconds (3600000)
 
 </script>
 </body>
